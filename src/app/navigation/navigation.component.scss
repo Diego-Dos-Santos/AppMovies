@@ -1,0 +1,12 @@
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    background: black;
+    color: white;
+    padding: 2em;
+    a {
+      color: white;
+      text-transform: uppercase;
+      text-decoration: none;
+    }
+  }
