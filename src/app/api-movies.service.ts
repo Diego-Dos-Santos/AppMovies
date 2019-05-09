@@ -6,7 +6,7 @@ import {HttpClient} from '@angular/common/http';
 })
 export class ApiMoviesService {
   urlBase = `https://api.themoviedb.org/3/`;
-  key = 'AIzaSyACL5S0a8taw8VdlR3vMLy_7CT4snAggqQ';
+  key = 'da63f96158928b6fc3e74f1d20e6a5ce';
   generateUrl = (_type: string) => this.urlBase + `movie/${_type}?api_key=` + this.key;
   constructor(private http: HttpClient) { }
   
