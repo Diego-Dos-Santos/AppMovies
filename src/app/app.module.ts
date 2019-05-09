@@ -6,6 +6,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { MovieListComponent } from './movie-list/movie-list.component';
 import { MovieDetailComponent } from './movie-detail/movie-detail.component';
 import { NavigationComponent } from './navigation/navigation.component';
+import { ApiMoviesService } from './api-movies.service';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -18,9 +20,10 @@ import { NavigationComponent } from './navigation/navigation.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [ApiMoviesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
