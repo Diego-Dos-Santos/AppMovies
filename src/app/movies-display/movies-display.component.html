@@ -1,0 +1,12 @@
+<div class="movies">
+
+  <a
+  routerLink="/movie/{{movie.id}}"
+  class="movie"
+   *ngFor="let movie of films"
+   [style.backgroundImage]=" 'url(https://image.tmdb.org/t/p/w300/' + movie.backdrop_path +')' "
+   >
+      <h1>{{movie.title}}</h1>
+  </a>
+
+</div>

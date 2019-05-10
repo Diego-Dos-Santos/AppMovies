@@ -1,3 +1,42 @@
-<p>
-  movie-detail works!
-</p>
+<section *ngIf="movie" class="movieDetail">
+  <div
+    class="movie"
+    [style.backgroundImage]="
+      'url(https://image.tmdb.org/t/p/w600_and_h900_bestv2/' +
+      movie.backdrop_path +
+      ')'
+    "
+  >
+    <img
+      class="poster"
+      src="https://image.tmdb.org/t/p/w300/{{ movie.poster_path }}"
+      alt=""
+    />
+
+    <div class="data">
+      <h1>{{ movie.title }}</h1>
+      <h1>{{ movie.adult ? "♦️♦️♦️" : "" }}</h1>
+      <div class="release">{{ movie.release_date }}</div>
+      <a href="{{ homepage }}" target="_blank" rel="noopener noreferrer">
+        {{ movie.homepage }}
+      </a>
+      <p>{{ movie.overview }}</p>
+      <div class="genres">
+        <span *ngFor="let genre of movie.genres">{{ genre.name }}</span>
+      </div>
+
+      <div class="moreInfo">
+        <div class="vote_average">
+          Vote average: <span class="big">{{ movie.vote_average }}</span>
+        </div>
+        <div class="vote_count">Vote count: {{ movie.vote_count }}</div>
+        <div class="popularity">Popularity: {{ movie.popularity }}</div>
+        <div class="budget">Budget: $ {{ movie.budget }}</div>
+        <div class="revenue">Revenue: $ {{ movie.revenue }}</div>
+      </div>
+    </div>
+  </div>
+  <div class="related">
+    <app-movies-display [films]="related"></app-movies-display>
+  </div>
+</section>

@@ -1,0 +1,76 @@
+.movieDetail {
+    color: white;
+    background-size: cover;
+    .related {
+        padding:2em;
+        background: #444;
+    }
+    .movie {
+
+        padding: 2em;
+        background-size: cover;
+        min-height: 100vh;
+        color: white;
+        position: relative;
+        display: grid;
+        grid-template-columns: 15em 1fr;
+        grid-gap: 2em;
+        @media(max-width: 500px) {
+        grid-template-columns:  10em 1fr;
+
+
+        }
+        >* {
+            position: relative;
+            z-index: 1;
+        }
+
+        &::before {
+            content: '';
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            z-index: 0;
+
+
+        }
+
+        .poster {
+            width: 100%
+        }
+
+        .data {
+            a {
+                color: white;
+            }
+
+            .genres {
+                span {
+                    margin-right: 1em;
+                    background: #444;
+                    color: white;
+                    padding: 0.4em;
+                }
+            }
+
+            .moreInfo {
+                div {
+                    margin: 1em 0;
+                }
+
+                .vote_average {
+                    font-weight: 900;
+                }
+
+                .big {
+                    font-size: 2em;
+                }
+            }
+        }
+    }
+}
